@@ -178,19 +178,19 @@ export default {
       this.selectedUserTypeId = val.target.selectedOptions[0].value;
     },
     fetchUsers() {
-      let uri = "http://localhost/backend/public/api/users";
+      let uri = "http://localhost/leafcutter/backend/public/api/users";
       this.axios.get(uri).then(response => {
         this.users = response.data;
       });
     },
     fetchUserTypes() {
-      let uri = "http://localhost/backend/public/api/user_types";
+      let uri = "http://localhost/leafcutter/backend/public/api/user_types";
       this.axios.get(uri).then(response => {
         this.user_types = response.data.data;
       });
     },
     async updateUserType() {
-      let uri = "http://localhost/backend/public/api/user/update";
+      let uri = "http://localhost/leafcutter/backend/public/api/user/update";
       let data = {
         user_id: this.selectedUserId,
         user_type_id: this.selectedUserTypeId
